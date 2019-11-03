@@ -1,7 +1,7 @@
 {
     "name": "react-todo-app",
     "version": "1.1",
-    "homepage": "https://tanishshah37.github.io/React-Todo-App/",
+    "homepage": "https://tanishshah37.github.io/React-Todo-App/build/",
     "dependencies": {
         "@date-io/date-fns": "1.3.6",
         "@material-ui/core": "4.1.1",
@@ -16,6 +16,7 @@
         "downshift": "3.2.10",
         "firebase": "6.2.0",
         "formsy-react": "1.1.5",
+        "gh-pages": "^2.1.1",
         "jsonwebtoken": "8.5.1",
         "jss": "10.0.0-alpha.20",
         "jss-extend": "6.2.0",
@@ -81,7 +82,9 @@
         "eject": "react-scripts eject",
         "build-docs": "find ./src/app/main/documentation/material-ui-components \\( -name '*.ts' -o -name '*.tsx' \\) -type f -delete && babel-node src/app/main/documentation/material-ui-components/build.js",
         "build-stats": "yarn run build --stats",
-        "bundle-report": "yarn run build-stats && webpack-bundle-analyzer build/bundle-stats.json -m static -r build/bundle-stats.html -O"
+        "bundle-report": "yarn run build-stats && webpack-bundle-analyzer build/bundle-stats.json -m static -r build/bundle-stats.html -O",
+        "predeploy": "yarn build",
+        "deploy": "gh-pages -d build"
     },
     "eslintConfig": {
         "extends": "react-app"
